@@ -23,14 +23,18 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
       </ul>
-      <form class="d-flex">
+      <div class="d-flex">
+        <% if user_signed_in? %>
+          <%= button_to "Log Off", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+          <% else %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <%# <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> %>
     </div>
   </div>
 </nav>

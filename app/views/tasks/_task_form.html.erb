@@ -1,5 +1,5 @@
-<h1><%= action_name == 'new' ? 'New Task' : 'Edit Task' %></h1>
 <%= form_with model: @task, local: true do |form| %>
+  <h1><%= action_name == 'new' ? 'New Task' : 'Edit Task' %></h1>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>

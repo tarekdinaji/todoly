@@ -10,6 +10,7 @@ class TasksController < ApplicationController
 
   def new
     @task = current_user.tasks.build
+    render partial: 'tasks/task_form'
   end
 
   def create
@@ -22,7 +23,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-
+    render partial: 'tasks/task_form'
   end
 
   def update
